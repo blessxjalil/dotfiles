@@ -12,24 +12,23 @@ export PATH="$HOME/.local/bin/":$PATH
 ZSH_THEME="fishy"
 
 # plugins
-plugins=(git extract github-ssh)
+plugins=(git extract gen-ssh)
 
 source $ZSH/oh-my-zsh.sh
 
 # alias
-alias zshrc="vim ~/.zshrc"
-alias vimrc="vim ~/.vim/vimrc"
 alias dotfiles="cd ~/.dotfiles"
-alias v="vim"
-
+alias vimrc="nvim ~/.vim/vimrc"
+alias zshrc="nvim ~/.zshrc"
 alias cp="cp -r"
+alias v="nvim"
+
 
 # functions
 update() {
 	sudo apt update -y
 	sudo apt dist-upgrade -y
 	sudo apt autoremove -y
-	echo "Updated! 🍻"
 }
 
 trash() {
