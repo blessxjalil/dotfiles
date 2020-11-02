@@ -1,0 +1,11 @@
+@import url("resource:///org/gnome/theme/gnome-shell.css");
+
+stage {
+    font-family: "Roboto Sans";
+    font-size: 14px;
+}
+
+#panel {
+    height: 30px;
+    font-size: 12px;
+}
