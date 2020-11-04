@@ -6,6 +6,7 @@ warn=$(tput setaf 1)
 
 PACKAGES=(
     neovim
+    tmux
     htop
     zsh
     build-essential
@@ -15,10 +16,20 @@ PACKAGES=(
     tree
 )
 
+function install_neovim() {
+    echo "${bold}==> installing neovim${norm}"
+    sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
+       https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
+}
+
 function install_dotfiles() {
     echo "${bold}==> installing dotfiles${norm}"
     ln -s ~/.dotfiles/zshrc ~/.zshrc
     ln -s ~/.dotfiles/gitconfig ~/.gitconfig
+    if [[ -d ~/.config/nvim ]]; then
+    	ln -s ~/.dotfiles/init.vim  ~/.config/nvim/init.vim
+    fi
+
 }
 
 function install_ohmyzsh() {

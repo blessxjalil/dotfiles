@@ -1,8 +1,9 @@
 #!/usr/bin/env zsh
 # source: https://github.com/jxlil/dotfiles
 
-export ZSH=$HOME/.dotfiles/oh-my-zsh
-ZSH_CUSTOM=$HOME/.dotfiles/custom-oh-my-zsh
+export DOTFILES="$HOME/.dotfiles"
+export ZSH="$DOTFILES/oh-my-zsh"
+export ZSH_CUSTOM="$DOTFILES/custom-oh-my-zsh"
 
 # add local bin
 export PATH="$HOME/.local/bin/":$PATH
@@ -17,8 +18,8 @@ plugins=(git extract gen-ssh)
 source $ZSH/oh-my-zsh.sh
 
 # alias
+alias vimrc="nvim ~/.config/nvim/init.vim"
 alias dotfiles="cd ~/.dotfiles"
-alias vimrc="nvim ~/.vim/vimrc"
 alias zshrc="nvim ~/.zshrc"
 alias cp="cp -r"
 alias v="nvim"
