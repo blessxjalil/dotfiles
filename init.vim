@@ -33,20 +33,14 @@ so $DOTFILES/nvim/plugin/lightline/lightline.vim
 call plug#end()
 
 
-
-
 " General
 " -------
-
 
 set cursorline
 set rnu
 set number
 set ruler
 colorscheme nord
-set termguicolors
-
-
 
 
 

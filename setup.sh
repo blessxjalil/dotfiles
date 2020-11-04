@@ -26,6 +26,7 @@ function install_dotfiles() {
     echo "${bold}==> installing dotfiles${norm}"
     ln -s ~/.dotfiles/zshrc ~/.zshrc
     ln -s ~/.dotfiles/gitconfig ~/.gitconfig
+    ln -s ~/.dotfiles/tmux.conf ~/.tmux.conf
     if [[ -d ~/.config/nvim ]]; then
     	ln -s ~/.dotfiles/init.vim  ~/.config/nvim/init.vim
     fi
