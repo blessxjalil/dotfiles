@@ -1,2 +1,5 @@
 # ~/.dotfiles
-Archivos de configuración de mi sistema operativo
+
+```bash
+./setup.sh all
+```
