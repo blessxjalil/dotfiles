@@ -23,9 +23,16 @@ alias dotfiles="cd ~/.dotfiles"
 alias zshrc="nvim ~/.zshrc"
 alias cp="cp -r"
 alias v="nvim"
+alias py="python3.8"
 
 
 # functions
+
+pi() {
+	py -m pip install $1 --upgrade
+}
+
+
 update() {
 	sudo apt update -y
 	sudo apt dist-upgrade -y
