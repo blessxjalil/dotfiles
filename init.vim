@@ -19,6 +19,9 @@ let g:coc_config_home="$DOTFILES/nvim/plugin/coc"
 " IDE
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 
+" Tree
+Plug 'preservim/nerdtree'
+
 " Themes
 Plug 'arcticicestudio/nord-vim'
 let g:nord_bold = 0
@@ -66,3 +69,7 @@ vnoremap <C-c> "+y
 
 " easymotion
 map <Leader>s <Plug>(easymotion-s2)
+
+" NERDTree
+map <Leader>nt :NERDTreeToggle<CR>
+
