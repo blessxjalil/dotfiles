@@ -9,6 +9,7 @@ call plug#begin(stdpath('config') . "/plugged")
 " typing
 Plug 'jiangmiao/auto-pairs'
 Plug 'mg979/vim-visual-multi', {'branch': 'master'}
+Plug 'easymotion/vim-easymotion'
 
 " autocomplete
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
@@ -62,3 +63,6 @@ inoremap UU <Esc> u
 
 " copy to clipboard
 vnoremap <C-c> "+y
+
+" easymotion
+map <Leader>s <Plug>(easymotion-s2)
