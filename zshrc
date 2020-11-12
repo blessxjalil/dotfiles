@@ -24,6 +24,7 @@ alias zshrc="nvim ~/.zshrc"
 alias cp="cp -r"
 alias v="nvim"
 alias py="python3.8"
+alias tb="taskbook"
 
 
 # functions
@@ -32,7 +33,6 @@ pi() {
 	py -m pip install $1 --upgrade
 }
 
-
 update() {
 	sudo apt update -y
 	sudo apt dist-upgrade -y
@@ -40,11 +40,13 @@ update() {
 }
 
 trash() {
-    mkdir -p /tmp/wastebasket/
-    mv $* /tmp/wastebasket/
+	mkdir -p /tmp/wastebasket
+	for junk_file in ${@}; do 
+		mv $junk_file /tmp/wastebasket/${junk_file}-$(date +%y%m%d%H%M%S)
+	done
 }
 
 destroy() {
-    shred -vzu -n 10 $*
+	shred -vzu -n 10 $*
 }
 
