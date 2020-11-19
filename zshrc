@@ -9,8 +9,7 @@ export ZSH_CUSTOM="$DOTFILES/custom-oh-my-zsh"
 export PATH="$HOME/.local/bin/":$PATH
 
 # theme
-# ZSH_THEME="finox"
-ZSH_THEME="fishy"
+ZSH_THEME="robbyrussell"
 
 # plugins
 plugins=(git extract gen-ssh)
@@ -21,10 +20,10 @@ source $ZSH/oh-my-zsh.sh
 alias vimrc="nvim ~/.config/nvim/init.vim"
 alias dotfiles="cd ~/.dotfiles"
 alias zshrc="nvim ~/.zshrc"
-alias cp="cp -r"
-alias v="nvim"
 alias py="python3.8"
 alias tb="taskbook"
+alias cp="cp -r"
+alias v="nvim"
 
 
 # functions

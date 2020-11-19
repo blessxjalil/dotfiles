@@ -71,5 +71,13 @@ vnoremap <C-c> "+y
 map <Leader>s <Plug>(easymotion-s2)
 
 " NERDTree
-map <Leader>nt :NERDTreeToggle<CR>
+map <Leader>nt :NERDTreeToggle<cr>
 
+" Tabs
+noremap <C-t> :tabnew<cr>
+noremap <C-w> :tabclose<cr>
+noremap <C-left> :tabp<cr>
+noremap <C-right> :tabn<cr>
+
+" FZF
+noremap <Leader>f :FZF<cr>
