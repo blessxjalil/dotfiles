@@ -81,3 +81,11 @@ noremap <C-right> :tabn<cr>
 
 " FZF
 noremap <Leader>f :FZF<cr>
+
+" move to windows
+noremap <silent> <C-h> :wincmd h<cr>
+noremap <silent> <C-j> :wincmd j<cr>
+noremap <silent> <C-k> :wincmd k<cr>
+noremap <silent> <C-l> :wincmd l<cr>
+
+
