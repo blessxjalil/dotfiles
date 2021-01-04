@@ -29,7 +29,7 @@ alias v="nvim"
 # functions
 
 pi() {
-	py -m pip install $1 --upgrade
+	py -m pip install $1 
 }
 
 update() {
@@ -48,4 +48,6 @@ trash() {
 destroy() {
 	shred -vzu -n 10 $*
 }
+
+
 
