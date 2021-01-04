@@ -48,6 +48,9 @@ colorscheme nord
 
 set tabstop=2 shiftwidth=2
 
+" folding
+set foldmethod=indent   
+set nofoldenable
 
 " Maps
 " ----
