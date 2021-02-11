@@ -9,7 +9,7 @@ export ZSH_CUSTOM="$DOTFILES/custom-oh-my-zsh"
 export PATH="$HOME/.local/bin/":$PATH
 
 # theme
-ZSH_THEME="robbyrussell"
+ZSH_THEME="fishy"
 
 # plugins
 plugins=(git extract gen-ssh)
