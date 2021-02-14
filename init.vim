@@ -79,9 +79,9 @@ map <Leader>s <Plug>(easymotion-s2)
 map <Leader>nt :NERDTreeToggle<cr>
 
 " Tabs
-noremap <C-t> :tabnew<cr>
+"noremap <C-t> :tabnew<cr>
 noremap <C-w> :tabclose<cr>
-noremap <C-h> :tabp<cr>
+"noremap <C-h> :tabp<cr>
 noremap <C-l> :tabn<cr>
 
 " FZF
@@ -92,5 +92,20 @@ noremap <silent> <leader>h :wincmd h<cr>
 noremap <silent> <leader>j :wincmd j<cr>
 noremap <silent> <leader>k :wincmd k<cr>
 noremap <silent> <leader>l :wincmd l<cr>
+
+function! OpenTerminal()
+
+	execute "vsp term://zsh"
+	execute "set nonu"
+	execute "set nornu"
+
+	execute "tnoremap <buffer> <leader>t <C-\\><C-n>:q<CR>"
+	execute "tnoremap <buffer> <C-n> <C-\\><C-n>"
+			
+	startinsert!
+
+endfunction
+
+nnoremap <silent> <leader>t :call OpenTerminal()<CR>
 
 
