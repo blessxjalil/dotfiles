@@ -63,21 +63,14 @@ set nofoldenable
 
 " Maps
 " ----
-let mapleader=","
+let mapleader=" "
 
-" quick movement
-inoremap II <Esc> I
-inoremap AA <Esc> A
-inoremap OO <Esc> O
-
-" line modifications
-inoremap CC <Esc> C
-inoremap SS <Esc> S
-inoremap DD <Esc> dd
-inoremap UU <Esc> u
+" ESC
+inoremap <C-c> <esc>
 
 " copy to clipboard
-vnoremap <C-c> "+y
+vnoremap <leader>y "+y
+nnoremap <leader>Y gg"+yG
 
 " easymotion
 map <Leader>s <Plug>(easymotion-s2)
@@ -88,16 +81,16 @@ map <Leader>nt :NERDTreeToggle<cr>
 " Tabs
 noremap <C-t> :tabnew<cr>
 noremap <C-w> :tabclose<cr>
-noremap <C-left> :tabp<cr>
-noremap <C-right> :tabn<cr>
+noremap <C-h> :tabp<cr>
+noremap <C-l> :tabn<cr>
 
 " FZF
 noremap <Leader>f :FZF<cr>
 
 " move to windows
-noremap <silent> <C-h> :wincmd h<cr>
-noremap <silent> <C-j> :wincmd j<cr>
-noremap <silent> <C-k> :wincmd k<cr>
-noremap <silent> <C-l> :wincmd l<cr>
+noremap <silent> <leader>h :wincmd h<cr>
+noremap <silent> <leader>j :wincmd j<cr>
+noremap <silent> <leader>k :wincmd k<cr>
+noremap <silent> <leader>l :wincmd l<cr>
 
 
