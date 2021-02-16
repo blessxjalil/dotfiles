@@ -57,42 +57,48 @@ set nowrap
 
 set tabstop=2 shiftwidth=2
 
+
 " folding
 set foldmethod=indent   
 set nofoldenable
 
 " Maps
 " ----
-let mapleader=" "
+let mapleader=","
+
+map <leader>ob :Buffers<CR>
 
 " ESC
-inoremap <C-c> <esc>
+inoremap <leader>e <esc>
 
 " copy to clipboard
 vnoremap <leader>y "+y
 nnoremap <leader>Y gg"+yG
 
 " easymotion
+nnoremap <silent> <A-j> 10<C-e>
+nnoremap <silent> <A-k> 10<C-y>
 map <Leader>s <Plug>(easymotion-s2)
 
 " NERDTree
-map <Leader>nt :NERDTreeToggle<cr>
+map <Leader>nt :NERDTreeToggle<CR>
 
 " Tabs
-"noremap <C-t> :tabnew<cr>
-noremap <C-w> :tabclose<cr>
-"noremap <C-h> :tabp<cr>
-noremap <C-l> :tabn<cr>
+noremap <C-t> :tabnew<CR>
+noremap <C-w> :tabclose<CR>
+noremap <C-h> :tabp<CR>
+noremap <C-l> :tabn<CR>
 
 " FZF
-noremap <Leader>f :FZF<cr>
+noremap <Leader>f :FZF<CR>
 
 " move to windows
-noremap <silent> <leader>h :wincmd h<cr>
-noremap <silent> <leader>j :wincmd j<cr>
-noremap <silent> <leader>k :wincmd k<cr>
-noremap <silent> <leader>l :wincmd l<cr>
+noremap <silent> <leader>h :wincmd h<CR>
+noremap <silent> <leader>j :wincmd j<CR>
+noremap <silent> <leader>k :wincmd k<CR>
+noremap <silent> <leader>l :wincmd l<CR>
 
+" terminal
 function! OpenTerminal()
 
 	execute "vsp term://zsh"
@@ -101,6 +107,7 @@ function! OpenTerminal()
 
 	execute "tnoremap <buffer> <leader>t <C-\\><C-n>:q<CR>"
 	execute "tnoremap <buffer> <C-n> <C-\\><C-n>"
+	execute "tnoremap <buffer> <leader>l <C-\\><C-n>:wincmd l<CR>"
 			
 	startinsert!
 
