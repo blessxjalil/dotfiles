@@ -20,23 +20,15 @@ source $ZSH/oh-my-zsh.sh
 alias vimrc="nvim ~/.config/nvim/init.vim"
 alias dotfiles="cd ~/.dotfiles"
 alias zshrc="nvim ~/.zshrc"
-alias py="python3.8"
+alias py="python3.9"
 alias tb="taskbook"
 alias cp="cp -r"
+alias rm="rm -r"
 alias v="nvim"
 
 
 # functions
-
-pi() {
-	py -m pip install $1 
-}
-
-update() {
-	sudo apt update -y
-	sudo apt dist-upgrade -y
-	sudo apt autoremove -y
-}
+# ---------
 
 trash() {
 	mkdir -p /tmp/wastebasket
@@ -49,11 +41,7 @@ destroy() {
 	shred -vzu -n 10 $*
 }
 
-
-
-
 autoload -Uz compinit
 zstyle ':completion:*' menu select
 fpath+=~/.zfunc
-
 
