@@ -5,7 +5,6 @@ norm=$(tput sgr0)
 warn=$(tput setaf 1)
 
 PACKAGES=(
-    neovim
     tmux
     htop
     zsh
@@ -18,6 +17,22 @@ PACKAGES=(
 
 function install_neovim() {
     echo "${bold}==> installing neovim${norm}"
+    
+    CUSTOM_NVIM_PATH="$HOME/.local/bin/nvim"
+    mkdir -p "~/.local/bin/"
+    curl -L https://github.com/neovim/neovim/releases/latest/download/nvim.appimage -o "${CUSTOM_NVIM_PATH}"
+    chmod u+x "${CUSTOM_NVIM_PATH}"
+
+    # Set the above with the correct path, then run the rest of the commands:
+    set -u
+    sudo update-alternatives --install /usr/bin/ex ex "${CUSTOM_NVIM_PATH}" 110
+    sudo update-alternatives --install /usr/bin/vi vi "${CUSTOM_NVIM_PATH}" 110
+    sudo update-alternatives --install /usr/bin/view view "${CUSTOM_NVIM_PATH}" 110
+    sudo update-alternatives --install /usr/bin/vim vim "${CUSTOM_NVIM_PATH}" 110
+    sudo update-alternatives --install /usr/bin/vimdiff vimdiff "${CUSTOM_NVIM_PATH}" 110
+
+    mkdir -p "~/.config/nvim"
+    ln -s ~/.dotfiles/init.vim  ~/.config/nvim/init.vim
     sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
        https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
 }
@@ -27,9 +42,6 @@ function install_dotfiles() {
     ln -s ~/.dotfiles/zshrc ~/.zshrc
     ln -s ~/.dotfiles/gitconfig ~/.gitconfig
     ln -s ~/.dotfiles/tmux.conf ~/.tmux.conf
-    if [[ -d ~/.config/nvim ]]; then
-    	ln -s ~/.dotfiles/init.vim  ~/.config/nvim/init.vim
-    fi
 
 }
 
