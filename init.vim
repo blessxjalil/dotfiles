@@ -1,7 +1,6 @@
 " NEOVIM
 " source: https://github.com/jxlil/dotfiles
 
-" Plugins
 " -------
 
 call plug#begin(stdpath('config') . "/plugged") 
